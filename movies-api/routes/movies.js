@@ -37,7 +37,7 @@ function moviesApi(app) {
     });
 
     router.post("/", async function(req, res, next){
-        const { body:movie } = req
+        const { body:movie } = req;
         try {
             const createMovieId = await moviesService.createMovie({ movie });
 
@@ -54,7 +54,10 @@ function moviesApi(app) {
         const { movieId } = req.params;
         const { body:movie } = req
         try {
-            const updateMovieId = await moviesService.updateMovie({ movieId, movie });
+            const updateMovieId = await moviesService.updateMovie({ 
+                movieId, 
+                movie 
+            });
 
             res.status(200).json({
                 data: updateMovieId,
@@ -68,7 +71,7 @@ function moviesApi(app) {
     router.delete("/:movieId", async function(req, res, next){
         const { movieId } = req.params;
         try {
-            const deteleMovie = await MoviesService.deteleMovie({ movieId });
+            const deteleMovie = await moviesService.deteleMovie({ movieId });
 
             res.status(200).json({
                 data: deteleMovie,

@@ -14,17 +14,17 @@ class MoviesService {
 
     async createMovie() {
         const createMovieId = await Promise.resolve(moviesMock[0].id);
-        return createMovieId || {}; 
+        return createMovieId; 
     }
 
     async updateMovie() {
         const updateMovieId = await Promise.resolve(moviesMock[0]);
-        return updateMovieId || {}; 
+        return updateMovieId; 
     }
 
     async deleteMovie() {
         const deletedMovieId = await Promise.resolve(moviesMock[0]);
-        return deletedMovieId || {}; 
+        return deletedMovieId; 
     }
 }
 
